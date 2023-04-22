@@ -1,5 +1,9 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
+const generateMarkdown = require('./utils/generateMarkdown');
+const { renderLicenseBadge, renderLicenseLink, renderLicenseSection } = require('./utils/generateMarkdown');
+
+
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -52,52 +56,49 @@ const questions = [
 ];
 
   
-// TODO: Create a function to write README file
-//function writeToFile(fileName, data) {}
+//Create a function to write README file
 
 const fs = require('fs');
 
 function generateReadme(answers) {
-  const { title, usage, screenshot, credits, license, github, link } = answers;
+  const { title, description, installation, usage, contribution, test, license, username, email } = answers;
+
+  const licenseBadge = renderLicenseBadge(license);
+  const licenseLink = renderLicenseLink(license);
+  const licenseSection = renderLicenseSection(license);
 
   const readmeContent = `
 # ${title}
+${licenseBadge}
 
 ## Description
-
-Add a description of your project here.
+${description}
 
 ## Table of Contents
-
 - [Installation](#installation)
 - [Usage](#usage)
-- [Credits](#credits)
+- [Contribution](#contribution)
+- [Tests](#tests)
 - [License](#license)
 - [Questions](#questions)
 
 ## Installation
-
-Add installation instructions here.
+${installation}
 
 ## Usage
-
 ${usage}
 
-![${title} Screenshot](${screenshot})
+## Contribution
+${contribution}
 
-## Credits
+## Tests
+${test}
 
-${credits}
 
-## License
-
-${license}
+${licenseSection}
 
 ## Questions
-
-Find me on GitHub: [${github}](https://github.com/${github})
-
-Live app: [${link}](${link})
+If you have any questions or would like to contribute to this project, you can find me on GitHub: https://github.com/${username}, or contact me directly at ${email}.
   `;
 
   fs.writeFile('README.md', readmeContent, (err) => {
@@ -108,6 +109,7 @@ Live app: [${link}](${link})
     }
   });
 }
+
 
 
 
