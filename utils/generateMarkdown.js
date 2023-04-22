@@ -1,4 +1,4 @@
-//Create a function that returns a license badge based on which license is selected
+// Create a function that returns a license badge based on which license is selected
 function renderLicenseBadge(license) {
   if (!license) {
     return '';
@@ -18,7 +18,7 @@ function renderLicenseBadge(license) {
   }
 }
 
-//Create a function that returns the license link
+// Create a function that returns the license link
 function renderLicenseLink(license) {
   if (!license) {
     return '';
@@ -38,7 +38,7 @@ function renderLicenseLink(license) {
   }
 }
 
-//Create a function that returns the license section of README
+// Create a function that returns the license section of README
 function renderLicenseSection(license) {
   if (!license) {
     return '';
@@ -51,7 +51,7 @@ This project is licensed under the ${renderLicenseLink(license)} license. See th
 `;
 }
 
-//Create a function to generate markdown for README
+// Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title} ${renderLicenseBadge(data.license)}
 
