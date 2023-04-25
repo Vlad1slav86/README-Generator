@@ -14,17 +14,27 @@ A web application that allows users to search songs by genre or artist and then 
 - [Questions](#questions)
 
 ## Installation
-To install app, first clone the repo from GitHub: git clone https://github.com/Vlad1slav86/Pear-Music.git  , then avigate to the project directory and install the dependancies: cd Pear-Music -> npm install.
+To install app, first clone the repo from GitHub: git clone https://github.com/Vlad1slav86/Pear-Music.git  , then navigate to the project directory and install the dependancies: cd Pear-Music -> npm install.
 
 ## Usage
-To run the app, use the following command: npm start
+To run the app, use the following command: 
+```
+npm start
+```
 
 ## Contribution
-To contribute to the project, follow these steps: 1. Fork the repo 2. Create a new branch 3. Make changes and comit them 4. Push your changes to your forked repo 5. Open a pull request
+To contribute to the project, follow these steps: 
+1. Fork the repo 
+2. Create a new branch 
+3. Make changes and comit them 
+4. Push your changes to your forked repo 
+5. Open a pull request
 
 ## Tests
-To run tests, use the following command: npm test
-
+To run tests, use the following command: 
+```
+npm test
+```
 
 
 ## License
